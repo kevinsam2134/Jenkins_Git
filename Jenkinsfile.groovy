@@ -67,6 +67,19 @@ pipeline {
             steps {
                 echo "This is the Integration Test in the Stagine Environment, It performs integration tests on the staging environment to make that the application performs as intended in a setting similar to production."       
             }
+
+            post {
+                success {
+                    mail to: "kevinsamarasekara2121@gmail.com",
+                    subject: "Status of Integration Test on Staging",
+                    body: "Success"
+                }
+                failure {
+                    mail to: "kevinsamarasekara2121@gmail.com",
+                    subject: "Status of Integration Test on Staging",
+                    body: "Failure"
+            }
+        }
         }
         
         stage("Deploy to Production") {
