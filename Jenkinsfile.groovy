@@ -72,7 +72,7 @@ pipeline {
                 success {
                     mail to: "kevinsamarasekara2121@gmail.com",
                     subject: "Status of Integration Test on Staging",
-                    body: "Success"
+                    body: ${BUILD_LOG, maxLines=9999, escapeHtml=false}
                 }
                 failure {
                     mail to: "kevinsamarasekara2121@gmail.com",
