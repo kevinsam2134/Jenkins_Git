@@ -7,14 +7,16 @@ pipeline {
     stages {
         stage("Build") {
             steps {
-                echo "This is the Building Stage, it Build the code by compiling and packaging it using a build automation tool.\n An example of a tool for this stage would be: Apache Ant"
+                echo "This is the Building Stage, it Build the code by compiling and packaging it using a build automation tool.\nAn example of a tool for this stage would be: Apache Ant"
             }
         }
         stage("Unit and Integration Tests") {
             steps {
-                echo "This is the Unit and Integration Testing Stage,it carries out unit tests to make sure the code performs as intended and runs integration tests to make sure the application's various parts interact as intended."
-                echo "An example of a Unit Test tool for this stage would be: JUnit "
-                echo "An example of a Integration Test tool for this stage would be: Tessy "
+                echo '''
+                This is the Unit and Integration Testing Stage,it carries out unit tests to make sure the code performs as intended and runs integration tests to make sure the application's various parts interact as intended.
+                An example of a Unit Test tool for this stage would be: JUnit.
+                An example of a Integration Test tool for this stage would be: Tessy 
+                '''
             }
         }
         stage("Code Analysis Check") {
