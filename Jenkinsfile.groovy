@@ -30,6 +30,7 @@ pipeline {
                     body: "Failure"
             }
         }
+        }
 
         stage("Code Analysis Check") {
             steps {
@@ -74,4 +75,4 @@ pipeline {
         }
     }
 }
-}}
+}
