@@ -72,7 +72,8 @@ pipeline {
                 success {
                     mail to: "kevinsamarasekara2121@gmail.com",
                     subject: "Status of Integration Test on Staging",
-                    body: "${BUILD_LOG, maxLines=9999, escapeHtml=false}"
+                    body: "Success",
+                    emailext attachLog: true
                 }
                 failure {
                     mail to: "kevinsamarasekara2121@gmail.com",
