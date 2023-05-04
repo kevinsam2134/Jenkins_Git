@@ -54,6 +54,7 @@ pipeline {
                     body: "Failure"
             }
         }
+        }
 
         stage("Deploy to Staging") {
             steps {
@@ -73,4 +74,4 @@ pipeline {
         }
     }
 }
-}
+}}
