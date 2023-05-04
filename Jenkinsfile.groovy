@@ -71,14 +71,14 @@ pipeline {
             post {
                 success {
                     emailext attachLog: true,
-                    mail to: "kevinsamarasekara2121@gmail.com",
-                    subject: "Status of Integration Test on Staging",
-                    body: "Success",
+                    mail to:"kevinsamarasekara2121@gmail.com",
+                    subject:"Status of Integration Test on Staging",
+                    body: "Success"
                 }
                 failure {
-                    mail to: "kevinsamarasekara2121@gmail.com",
-                    subject: "Status of Integration Test on Staging",
-                    body: "Failure"
+                    mail to:"kevinsamarasekara2121@gmail.com",
+                    subject:"Status of Integration Test on Staging",
+                    body:"Failure"
             }
         }
         }
