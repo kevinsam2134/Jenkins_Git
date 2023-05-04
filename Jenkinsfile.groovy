@@ -7,8 +7,8 @@ pipeline {
     stages {
         stage("Build") {
             steps {
-                echo '''This is the Building Stage, it Build the code by compiling and packaging it using a build automation tool.
-                        An example of a tool for this stage would be: Apache Ant'''
+                echo '''This is the Building Stage, it Build the code by compiling and packaging it using a build automation tool. 
+                An example of a tool for this stage would be: Apache Ant'''
             }
         }
         stage("Unit and Integration Tests") {
