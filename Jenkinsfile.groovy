@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage("Build") {
             steps {
-                echo "This is the Building Stage, it Build the code by compiling and packaging it using a build automation tool.\nAn example of a tool for this stage would be: Apache Ant"
+                echo "This is the Building Stage, it Builds the code by compiling and packaging it using a build automation tool.\nAn example of a tool for this stage would be: Apache Ant"
             }
         }
         stage("Unit and Integration Tests") {
@@ -15,6 +15,24 @@ pipeline {
                 echo "This is the Unit and Integration Testing Stage,it carries out unit tests to make sure the code performs as intended and runs integration tests to make sure the application's various parts interact as intended.\n"
                 echo "An example of a Unit Test tool for this stage would be: JUnit.\nAn example of a Integration Test tool for this stage would be: Tessy."
                 
+            }
+
+            post {
+                success {
+                    mail to:"kevinsamarasekara2121@gmail.com"
+                    subject:"Sucess"
+                    body:"success"
+                }
+
+            }
+
+             post {
+                failure {
+                    mail to:"kevinsamarasekara2121@gmail.com"
+                    subject:"Failure"
+                    body:"failure"
+                }
+
             }
         }
         stage("Code Analysis Check") {
@@ -27,6 +45,24 @@ pipeline {
             steps {
                 echo "This is the Security Scan Stage, use a programme to do a security scan on the code to find weaknesses.\nAn example of a Security Scan Tool for this stage would be: Probely Security Scanner"
             }
+
+            post {
+                success {
+                    mail to:"kevinsamarasekara2121@gmail.com"
+                    subject:"Sucess"
+                    body:"success"
+                }
+
+            }
+
+             post {
+                failure {
+                    mail to:"kevinsamarasekara2121@gmail.com"
+                    subject:"Failure"
+                    body:"failure"
+                }
+
+            }
         }
         stage("Deploy to Staging") {
             steps {
@@ -38,6 +74,24 @@ pipeline {
             steps {
                 echo "This is the Integration Test in the Stagine Environment, It performs integration tests on the staging environment to make that the application performs as intended in a setting similar to production."
             
+            }
+
+            post {
+                success {
+                    mail to:"kevinsamarasekara2121@gmail.com"
+                    subject:"Sucess"
+                    body:"success"
+                }
+
+            }
+
+             post {
+                failure {
+                    mail to:"kevinsamarasekara2121@gmail.com"
+                    subject:"Failure"
+                    body:"failure"
+                }
+
             }
         }
         stage("Deploy to Production") {
