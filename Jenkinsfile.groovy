@@ -13,8 +13,7 @@ pipeline {
         stage("Unit and Integration Tests") {
             steps {
                 echo "This is the Unit and Integration Testing Stage,it carries out unit tests to make sure the code performs as intended and runs integration tests to make sure the application's various parts interact as intended.\n"
-                echo "An example of a Unit Test tool for this stage would be: JUnit.\n"
-                echo "An example of a Integration Test tool for this stage would be: Tessy"
+                echo "An example of a Unit Test tool for this stage would be: JUnit.\nAn example of a Integration Test tool for this stage would be: Tessy."
                 
             }
         }
