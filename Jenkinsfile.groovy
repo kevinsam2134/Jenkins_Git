@@ -24,6 +24,14 @@ pipeline {
                     body: "Success"
                 }
             }
+
+            post {
+                failure {
+                    mail to: "kevinsamarasekara2121@gmail.com",
+                    subject: "Status of Unit & Integration Stage",
+                    body: "Failure"
+                }
+            }
         }
 
         stage("Code Analysis Check") {
@@ -42,6 +50,14 @@ pipeline {
                     mail to: "kevinsamarasekara2121@gmail.com",
                     subject: "Status of Security Scan Stage",
                     body: "Success"
+                }
+            }
+
+            post {
+                failure {
+                    mail to: "kevinsamarasekara2121@gmail.com",
+                    subject: "Status of Security Scan Stage",
+                    body: "Failure"
                 }
             }
         }
