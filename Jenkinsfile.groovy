@@ -28,6 +28,14 @@ pipeline {
             steps {
                 echo "This is the Security Scan Stage, use a programme to do a security scan on the code to find weaknesses.\nAn example of a Security Scan Tool for this stage would be: Probely Security Scanner"
             }
+
+            post {
+                success {
+                    mail to: "kevinsamarasekara2121@gmail.com",
+                    subject: "Status - Security Scan",
+                    body: "Success"
+                }
+            }
         }
 
         stage("Deploy to Staging") {
