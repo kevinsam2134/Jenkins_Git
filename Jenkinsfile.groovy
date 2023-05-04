@@ -19,8 +19,8 @@ pipeline {
 
             post {
                 success {
-                    mail to:"kevinsamarasekara2121@gmail.com"
-                    subject:"Sucess"
+                    mail to:"kevinsamarasekara2121@gmail.com",
+                    subject:"Success",
                     body:"success"
                 }
 
@@ -28,8 +28,8 @@ pipeline {
 
              post {
                 failure {
-                    mail to:"kevinsamarasekara2121@gmail.com"
-                    subject:"Failure"
+                    mail to:"kevinsamarasekara2121@gmail.com",
+                    subject:"Failure",
                     body:"failure"
                 }
 
@@ -48,8 +48,8 @@ pipeline {
 
             post {
                 success {
-                    mail to:"kevinsamarasekara2121@gmail.com"
-                    subject:"Sucess"
+                    mail to:"kevinsamarasekara2121@gmail.com",
+                    subject:"Success",
                     body:"success"
                 }
 
@@ -57,8 +57,8 @@ pipeline {
 
              post {
                 failure {
-                    mail to:"kevinsamarasekara2121@gmail.com"
-                    subject:"Failure"
+                    mail to:"kevinsamarasekara2121@gmail.com",
+                    subject:"Failure",
                     body:"failure"
                 }
 
@@ -78,8 +78,8 @@ pipeline {
 
             post {
                 success {
-                    mail to:"kevinsamarasekara2121@gmail.com"
-                    subject:"Sucess"
+                    mail to:"kevinsamarasekara2121@gmail.com",
+                    subject:"Success",
                     body:"success"
                 }
 
@@ -87,8 +87,8 @@ pipeline {
 
              post {
                 failure {
-                    mail to:"kevinsamarasekara2121@gmail.com"
-                    subject:"Failure"
+                    mail to:"kevinsamarasekara2121@gmail.com",
+                    subject:"Failure",
                     body:"failure"
                 }
 
