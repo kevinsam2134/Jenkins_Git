@@ -19,15 +19,16 @@ pipeline {
 
              post {
                 success {
-                    mail to: "kevinsamarasekara2121@gmail.com",
-                    subject: "Status of Unit & Integration Stage",
-                    body: "Success"
+                    emailext attachLog: true, 
+                    body: 'Success', 
+                    subject: 'Unit and Integration Tests Stage', 
+                    to: 'kevinsamarasekara2121@gmail.com'
                 }
-
                 failure {
-                    mail to: "kevinsamarasekara2121@gmail.com",
-                    subject: "Status of Unit & Integration Stage",
-                    body: "Failure"
+                    emailext attachLog: true, 
+                    body: 'Fail', 
+                    subject: 'Unit and Integration Tests Stage', 
+                    to: 'kevinsamarasekara2121@gmail.com'
             }
         }
         }
@@ -45,14 +46,16 @@ pipeline {
 
             post {
                 success {
-                    mail to: "kevinsamarasekara2121@gmail.com",
-                    subject: "Status of Security Scan Stage",
-                    body: "Success"
+                    emailext attachLog: true, 
+                    body: 'Success', 
+                    subject: 'Status of Security Scan Stage', 
+                    to: 'kevinsamarasekara2121@gmail.com'
                 }
                 failure {
-                    mail to: "kevinsamarasekara2121@gmail.com",
-                    subject: "Status of Security Scan Stage",
-                    body: "Failure"
+                    emailext attachLog: true, 
+                    body: 'Fail', 
+                    subject: 'Status of Security Scan Stage', 
+                    to: 'kevinsamarasekara2121@gmail.com'
             }
         }
         }
