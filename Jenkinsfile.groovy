@@ -10,11 +10,11 @@ pipeline {
                 echo "This is the Building Stage, it Builds the code by compiling and packaging it using a build automation tool.\nAn example of a tool for this stage would be: Apache Ant"
             }
         }
+
         stage("Unit and Integration Tests") {
             steps {
                 echo "This is the Unit and Integration Testing Stage,it carries out unit tests to make sure the code performs as intended and runs integration tests to make sure the application's various parts interact as intended.\n"
-                echo "An example of a Unit Test tool for this stage would be: JUnit.\nAn example of a Integration Test tool for this stage would be: Tessy."
-                
+                echo "An example of a Unit Test tool for this stage would be: JUnit.\nAn example of a Integration Test tool for this stage would be: Tessy."     
             }
 
             post {
@@ -35,12 +35,13 @@ pipeline {
 
             }
         }
+
         stage("Code Analysis Check") {
             steps {
-                echo "This is the Code Quality Check Stage, it applies a code analysis tool to check the code for compliance with industry standards.\nAn example of a Code Analysis Tool for this stage would be: Checkstyle"
-                
+                echo "This is the Code Quality Check Stage, it applies a code analysis tool to check the code for compliance with industry standards.\nAn example of a Code Analysis Tool for this stage would be: Checkstyle"     
             }
         }
+
         stage("Security Scan") {
             steps {
                 echo "This is the Security Scan Stage, use a programme to do a security scan on the code to find weaknesses.\nAn example of a Security Scan Tool for this stage would be: Probely Security Scanner"
@@ -64,6 +65,7 @@ pipeline {
 
             }
         }
+
         stage("Deploy to Staging") {
             steps {
                 echo "This is the Deploying Stage, upload the programme to a staging server: $STAGING_SERVER  "
@@ -94,6 +96,7 @@ pipeline {
 
             }
         }
+        
         stage("Deploy to Production") {
         steps {
             echo "This is the Deploy to Production Stage, upload the programme to a staging server: $PRODUCTION_SERVER"
