@@ -19,15 +19,13 @@ pipeline {
         }
         stage("Code Analysis Check") {
             steps {
-                echo "This is the Code Quality Check Stage, it applies a code analysis tool to check the code for compliance with industry standards."
-                echo "An example of a Code Analysis Tool for this stage would be: Checkstyle"
+                echo "This is the Code Quality Check Stage, it applies a code analysis tool to check the code for compliance with industry standards.\nAn example of a Code Analysis Tool for this stage would be: Checkstyle"
                 
             }
         }
         stage("Security Scan") {
             steps {
-                echo "This is the Security Scan Stage, use a programme to do a security scan on the code to find weaknesses."
-                echo "An example of a Security Scan Tool for this stage would be: Probely Security Scanner"
+                echo "This is the Security Scan Stage, use a programme to do a security scan on the code to find weaknesses.\nAn example of a Security Scan Tool for this stage would be: Probely Security Scanner"
             }
         }
         stage("Deploy to Staging") {
