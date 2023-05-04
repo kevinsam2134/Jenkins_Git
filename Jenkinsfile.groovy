@@ -16,6 +16,14 @@ pipeline {
                 echo "This is the Unit and Integration Testing Stage,it carries out unit tests to make sure the code performs as intended and runs integration tests to make sure the application's various parts interact as intended.\n"
                 echo "An example of a Unit Test tool for this stage would be: JUnit.\nAn example of a Integration Test tool for this stage would be: Tessy."     
             }
+
+             post {
+                success {
+                    mail to: "kevinsamarasekara2121@gmail.com",
+                    subject: "Status of Unit & Integration Stage",
+                    body: "Success"
+                }
+            }
         }
 
         stage("Code Analysis Check") {
@@ -32,7 +40,7 @@ pipeline {
             post {
                 success {
                     mail to: "kevinsamarasekara2121@gmail.com",
-                    subject: "Status - Security Scan",
+                    subject: "Status of Security Scan Stage",
                     body: "Success"
                 }
             }
