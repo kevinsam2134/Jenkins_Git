@@ -41,7 +41,7 @@ pipeline {
 
         stage("Security Scan") {
             steps {
-                echo "This is the Security Scan Stage, use a programme to do a security scan on the code to find weaknesses.\nAn example of a Security Scan Tool for this stage would be: Probely Security Scanner"
+                decho "This is the Security Scan Stage, use a programme to do a security scan on the code to find weaknesses.\nAn example of a Security Scan Tool for this stage would be: Probely Security Scanner"
             }
 
             post {
