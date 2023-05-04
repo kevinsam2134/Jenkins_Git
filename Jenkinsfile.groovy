@@ -1,49 +1,51 @@
 pipeline {
     agent any
     environment{
-        DIRECTORY_PATH ="C:/Users/HP/OneDrive/Desktop/SIT223_SIT753 - Professional Practice in Information Technology/J"
-        TESTING_ENVIRONMENT ="Local Testing"
-        PRODUCTION_ENVIRONMENT = "Kevin Samarasekera"
-        
+        STAGING_SERVER = "AWS EC2"
+        PRODUCTION_SERVER = "Google Computer Engine"
     }
     stages {
         stage("Build") {
             steps {
-                echo "This is the Building Stage"
-                echo "Fetch the code from the directory path: $DIRECTORY_PATH"
-                echo "Compile the code  and generate any necessary artifacts"
+                echo "This is the Building Stage, it Build the code by compiling and packaging it using a build automation tool."
+                echo "An example of a tool for this stage would be: Apache Ant"
             }
         }
-        stage("Test") {
+        stage("Unit and Integration Tests") {
             steps {
-                echo "This is the Testing Stage"
-                echo "unit tests"
-                echo "integration tests"
+                echo "This is the Unit and Integration Testing Stage,it carries out unit tests to make sure the code performs as intended and runs integration tests to make sure the application's various parts interact as intended."
+                echo "An example of a Unit Test tool for this stage would be: JUnit "
+                echo "An example of a Integration Test tool for this stage would be: Tessy "
             }
         }
-        stage("Code Quality Check") {
+        stage("Code Analysis Check") {
             steps {
-                echo "This is the Code Quality Check Stage"
-                echo "Check the quality of the code"
+                echo "This is the Code Quality Check Stage, it applies a code analysis tool to check the code for compliance with industry standards."
+                echo "An example of a Code Analysis Tool for this stage would be: Checkstyle"
                 
             }
         }
-        stage("Deploy") {
+        stage("Security Scan") {
             steps {
-                echo "This is the Deploy Stage"
-                echo "Deploy the application to a testing environment: $TESTING_ENVIRONMENT"
+                echo "This is the Security Scan Stage, use a programme to do a security scan on the code to find weaknesses."
+                echo "An example of a Security Scan Tool for this stage would be: Probely Security Scanner"
             }
         }
-        stage("Approval") {
+        stage("Deploy to Staging") {
             steps {
-                echo "This is the Approval Stage"
-                sleep 10
+                echo "This is the Deploying Stage, upload the programme to a staging server: $STAGING_SERVER  "
+                
+            }
+        }
+         stage("Integration Tests on Staging") {
+            steps {
+                echo "This is the Integration Test in the Stagine Environment, It performs integration tests on the staging environment to make that the application performs as intended in a setting similar to production."
+            
             }
         }
         stage("Deploy to Production") {
         steps {
-            echo "This is the Deploy to Production Stage"
-            echo "Deploy the code to the Production environment: $PRODUCTION_ENVIRONMENT"
+            echo "This is the Deploy to Production Stage, upload the programme to a staging server: $PRODUCTION_SERVER"
         }
     }
 }
