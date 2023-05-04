@@ -76,9 +76,10 @@ pipeline {
                     to: 'kevinsamarasekara2121@gmail.com'
                 }
                 failure {
-                    mail to:"kevinsamarasekara2121@gmail.com",
-                    subject:"Status of Integration Test on Staging",
-                    body:"Failure"
+                    emailext attachLog: true, 
+                    body: 'Fail', 
+                    subject: 'Status of Integration Test on Staging', 
+                    to: 'kevinsamarasekara2121@gmail.com'
             }
         }
         }
