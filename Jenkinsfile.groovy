@@ -23,14 +23,11 @@ pipeline {
                     subject: "Status of Unit & Integration Stage",
                     body: "Success"
                 }
-            }
 
-            post {
                 failure {
                     mail to: "kevinsamarasekara2121@gmail.com",
                     subject: "Status of Unit & Integration Stage",
                     body: "Failure"
-                }
             }
         }
 
@@ -51,14 +48,10 @@ pipeline {
                     subject: "Status of Security Scan Stage",
                     body: "Success"
                 }
-            }
-
-            post {
                 failure {
                     mail to: "kevinsamarasekara2121@gmail.com",
                     subject: "Status of Security Scan Stage",
                     body: "Failure"
-                }
             }
         }
 
